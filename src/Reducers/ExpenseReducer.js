@@ -17,6 +17,8 @@ const expensereducer=(state=arr,action)=>{
                     return item
                 }
             })
+        case 'setExpense':
+            return action.expense
         default:
             return state
     }

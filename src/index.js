@@ -4,24 +4,17 @@ import './index.css';
 import Approuter from './App';
 import * as serviceWorker from './serviceWorker';
 import store from '../src/ConfigStore/Store';
-import {startAddExpense,removeexpense,editexpense} from '../src/actions/ExpenseAction';
+import {startAddExpense,removeexpense,editexpense,startSetExpense} from '../src/actions/ExpenseAction';
 import {searchtextfilter,sortbyamount,sortbydate,startdate,enddate} from '../src/actions/FilterAction';
 import getVisibleExpense from '../src/Selectors/ExpenseVisible'; 
 import {Provider} from 'react-redux';
 
-store.subscribe(()=>{
-    console.log(store.getState())
-})
 
-store.dispatch(startAddExpense({description:'Water_Bill',amount:4500}))
-store.dispatch(startAddExpense({description:'Gas_Bill',createat:1000}))
-store.dispatch(startAddExpense({description:'rent',amount:109500}))
 
 
 
 const state=store.getState();
-const visible=getVisibleExpense(state.expense,state.filter);
-console.log(visible);
+
 
 
 
@@ -54,8 +47,9 @@ console.log(visible);
 
 
 
-
-ReactDOM.render(<Provider store={store}><Approuter/></Provider> , document.getElementById('root'));
+ReactDOM.render(<p>Loading...</p>,document.getElementById('root'))
+store.dispatch(startSetExpense()).then(()=>{
+ReactDOM.render(<Provider store={store}><Approuter/></Provider> , document.getElementById('root'))})
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
