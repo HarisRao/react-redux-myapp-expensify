@@ -5,7 +5,7 @@ import ExpenseVisible from '../Selectors/ExpenseVisible'
 function ExpensesSummary(props){
     return(
         <div>
-            <h2>Viewing {props.ExpenseCount} expenses totalling {props.TotalExpense}.</h2> 
+            <h2>Viewing {props.ExpenseCount} expenses totalling Rs{props.TotalExpense}.</h2> 
         </div>
     )
 }
