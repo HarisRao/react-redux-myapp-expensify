@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import database from '../FireBase/firebase';
 
 
@@ -16,10 +15,11 @@ import database from '../FireBase/firebase';
     // }
 })
 export const startAddExpense=(expense={})=>{
-    return(dispatch)=>{
+    return(dispatch,getState)=>{
+        const uid=getState().auth.uid
         const {description='',note='',amount=0,createat=0}=expense;
         const expense1={description,note,amount,createat};
-        database.ref('expenses').push(expense1).then((ref)=>{
+        database.ref(`users/${uid}/expenses`).push(expense1).then((ref)=>{
         dispatch(addexpense({
             id:ref.key,
             ...expense1
@@ -33,8 +33,9 @@ export const removeexpense=({id}={})=>({
 })
 
 export const startRemoveExpense=({id}={})=>{
-    return(dispatch)=>{
-        return database.ref(`expenses/${id}`).remove().then(()=>{
+    return(dispatch,getState)=>{
+        const uid=getState().auth.uid
+        return database.ref(`users/${uid}/expenses/${id}`).remove().then(()=>{
             dispatch(removeexpense({id}))
         })
     }
@@ -49,8 +50,9 @@ export const editexpense=(id,update={})=>({
 })
 
 export const startEditExpense=(id,update)=>{
-    return(dispatch)=>{
-        return database.ref(`expenses/${id}`).update(update).then(()=>{
+    return(dispatch,getState)=>{
+        const uid=getState().auth.uid
+        return database.ref(`users/${uid}/expenses/${id}`).update(update).then(()=>{
             dispatch(editexpense(id,update));
         })
     }
@@ -63,8 +65,9 @@ export const setExpense=(expense)=>({
     expense
 }) 
 export const startSetExpense=()=>{
-    return(dispatch)=>{
-    return database.ref('expenses').once('value').then((snapShot)=>{
+    return(dispatch,getState)=>{
+        const uid=getState().auth.uid
+    return database.ref(`users/${uid}/expenses`).once('value').then((snapShot)=>{
         const expenses=[];
         snapShot.forEach((childSnapShot)=>{
             expenses.push({

@@ -4,9 +4,8 @@ import './index.css';
 import Approuter,{history} from './App';
 import * as serviceWorker from './serviceWorker';
 import store from '../src/ConfigStore/Store';
-import {startAddExpense,removeexpense,editexpense,startSetExpense} from '../src/actions/ExpenseAction';
+import {startSetExpense} from '../src/actions/ExpenseAction';
 import {login,logout} from '../src/actions/auth';
-import getVisibleExpense from '../src/Selectors/ExpenseVisible'; 
 import {Provider} from 'react-redux';
 import {firebase} from './FireBase/firebase'; 
 

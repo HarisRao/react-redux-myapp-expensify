@@ -1,8 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {removeexpense} from '../actions/ExpenseAction';
 import moment from 'moment';
-import numeral from 'numeral'
 // import store from '../ConfigStore/Store';
 // import ConnectedExpenseList from './ExpenseList';
 import {Link} from 'react-router-dom';
