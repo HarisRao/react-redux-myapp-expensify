@@ -1,18 +1,8 @@
 import database from '../FireBase/firebase';
 
-
-
-// export const addexpense=({description='',note='',amount=0,createat=0}={})=>({
-    export const addexpense=(expense)=>({
+export const addexpense=(expense)=>({
     type:'addexpense',
     expense
-    // expense:{
-    //     id:uuid(),
-    //     description,
-    //     note,
-    //     amount,
-    //     createat
-    // }
 })
 export const startAddExpense=(expense={})=>{
     return(dispatch,getState)=>{

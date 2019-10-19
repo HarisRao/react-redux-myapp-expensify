@@ -9,37 +9,6 @@ import {login,logout} from '../src/actions/auth';
 import {Provider} from 'react-redux';
 import {firebase} from './FireBase/firebase'; 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// store.subscribe(()=>{
-//     const state=store.getState();
-//     const visible=getvisible(state.expense,state.filter)
-//     console.log(visible)
-// })
-// const expenseone=store.dispatch(addexpense({description:'haris',amount:5000,createat:1000}))
-// const expensetwo=store.dispatch(addexpense({description:'Rao',amount:10000,createat:1200}))
-// store.dispatch(removeexpense({id:expenseone.expense.id}))
-// store.dispatch(editexpense(expensetwo.expense.id,{amount:50000}))
-
-// store.dispatch(changetext({text:'is'}))
-// store.dispatch(changetext({text:''}))
-// store.dispatch(sortbyamount('amount'))
-// store.dispatch(sortbydate())
-// store.dispatch(startdate({startdate:0}))
-// store.dispatch(startdate({startdate:undefined}))
-// store.dispatch(enddate({enddate:999}))
-
-
 let hasRendered=false;
 const renderApp=()=>{
     if(!hasRendered){
@@ -48,12 +17,8 @@ const renderApp=()=>{
 }
 }
 
-
-
-
 ReactDOM.render(<p>Loading...</p>,document.getElementById('root'))
-// store.dispatch(startSetExpense()).then(()=>{
-// ReactDOM.render(<Provider store={store}><Approuter/></Provider> , document.getElementById('root'))})
+
 firebase.auth().onAuthStateChanged((user)=>{
     if(user){
         store.dispatch(login(user.uid))

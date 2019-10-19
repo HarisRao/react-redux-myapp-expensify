@@ -9,7 +9,6 @@ const Header=({startLogOut})=>{
         <h1>Expensify</h1>
         <NavLink to="/dashboard" activeClassName="active">Dashboard</NavLink>      
         <NavLink to="/create" activeClassName="active">CreateExpense</NavLink>
-        {/* <NavLink to="/edit" activeClassName="active">EditExpense</NavLink> */}
         <button onClick={startLogOut}>Logout</button>
   
       </div>

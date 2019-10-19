@@ -1,7 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-// import store from '../ConfigStore/Store';
-// import ConnectedExpenseList from './ExpenseList';
 import {Link} from 'react-router-dom';
 const ExpenseListItem=(props)=>{
     return(
@@ -11,6 +9,4 @@ const ExpenseListItem=(props)=>{
         </div>
     )
 }
-
-// const ConnectedExpense=connect()(ExpenseListItem)
 export default ExpenseListItem
