@@ -2,12 +2,21 @@ import React from 'react';
 import {connect} from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
 import ExpenseVisible from '../Selectors/ExpenseVisible';
+import '../styles/header.css';
+import '../styles/expenselistvisible.css';
 const ExpenseList=(props)=>{
     return (
-        <div>
+        <div className="container1">
+            <div className="headlist">
+                <div className="mobile">Expenses</div>
+                <div className="desktop">Expense</div>
+                <div className="desktop">Amount</div>
+            </div>
             {
                 props.expense.length===0 ?
-           ( <h3>No Expenses</h3>):(
+           ( <div className="item item-message"> 
+               <span>No Expenses</span>
+            </div>):(
             props.expense.map((expense)=>{
                 return (
                     <ExpenseListItem expense={expense} key={expense.id}></ExpenseListItem>

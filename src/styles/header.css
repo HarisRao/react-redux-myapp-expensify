@@ -1,0 +1,27 @@
+.header{
+    background: #364051;
+}
+.title{
+    color:white;
+    text-decoration: none;
+}
+.head{
+    margin:0;
+}
+.container{
+    margin:0 auto; 
+    padding: 0 3.6rem; 
+    max-width: 80rem; 
+}
+.innercontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.container1{
+    margin:0 auto; 
+    padding: 0 1.6rem; 
+    max-width: 80rem;
+    margin-right: 10px; 
+}

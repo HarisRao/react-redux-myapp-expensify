@@ -8,6 +8,7 @@ import {startSetExpense} from '../src/actions/ExpenseAction';
 import {login,logout} from '../src/actions/auth';
 import {Provider} from 'react-redux';
 import {firebase} from './FireBase/firebase'; 
+import LoadingPage from './components/LoadingPage';
 
 let hasRendered=false;
 const renderApp=()=>{
@@ -17,7 +18,7 @@ const renderApp=()=>{
 }
 }
 
-ReactDOM.render(<p>Loading...</p>,document.getElementById('root'))
+ReactDOM.render(<LoadingPage/>,document.getElementById('root'))
 
 firebase.auth().onAuthStateChanged((user)=>{
     if(user){

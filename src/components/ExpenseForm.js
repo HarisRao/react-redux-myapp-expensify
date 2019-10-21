@@ -2,6 +2,9 @@ import React from 'react';
 import moment from 'moment'
 import 'react-dates/lib/css/_datepicker.css';
 import { SingleDatePicker } from 'react-dates';
+import '../styles/input.css';
+import '../styles/expenseform.css';
+import '../styles/login.css';
 class ExpenseForm extends React.Component{
     constructor(props){
         super(props)
@@ -63,16 +66,16 @@ class ExpenseForm extends React.Component{
      
     render(){
         return(
-            <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
-                    <input type="text" placeholder='Description' autoFocus value={this.state.description} onChange={(e)=>this.descriptionchange(e)}/>
-                    <input type="text" placeholder='Amount' value={this.state.amount} onChange={(e)=>{this.amountChange(e)}}/>
+                <form className="form" onSubmit={this.onSubmit}>
+                {this.state.error && <p className="form-error">{this.state.error}</p>}
+                    <input type="text" className="text-input" placeholder='Description' autoFocus value={this.state.description} onChange={(e)=>this.descriptionchange(e)}/>
+                    <input type="text" className="text-input" placeholder='Amount' value={this.state.amount} onChange={(e)=>{this.amountChange(e)}}/>
                     <SingleDatePicker date={this.state.createat} onDateChange={(e)=>{this.dateChange(e)}} focused={this.state.focused} onFocusChange={(e)=>{this.focus(e)}} numberOfMonths={1} isOutsideRange={()=>false}/>
-                    <textarea placeholder='Add a note for your Expense (optional)' value={this.state.note} onChange={(e)=>{this.notechange(e)}}></textarea>
-                    <button>Add Expense</button>
+                    <textarea className="textarea" placeholder='Add a note for your Expense (optional)' value={this.state.note} onChange={(e)=>{this.notechange(e)}}></textarea>
+                    <div>
+                        <button className="button">Save Expense</button>
+                    </div>
                 </form>
-            </div>
         )
     }
 }

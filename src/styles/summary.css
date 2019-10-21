@@ -1,0 +1,20 @@
+.maindiv{
+    background:#f7f7f7;
+    padding:2.0rem 0;
+    padding-left: 115px;
+    margin-bottom: 3.2rem; 
+
+}
+.innerdiv{
+    margin: 0; 
+}
+.view{
+    font-weight: normal;
+    margin:0;
+}
+span{
+    font-weight: bold;
+}
+.linkdiv{
+    margin-top: 1.6rem;
+}
