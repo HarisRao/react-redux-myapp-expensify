@@ -27,6 +27,7 @@ body{
     display: inline-block;
     text-decoration: none;
     line-height: 1;
+    cursor: pointer;
 }
 .logout{
     background: none;
