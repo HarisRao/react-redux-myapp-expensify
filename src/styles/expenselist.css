@@ -11,6 +11,12 @@
             margin-bottom: 3.2rem;
         }
     }
+    @media screen and (max-width:45rem)
+    {
+        .input{
+            margin-bottom:12rem;
+        }
+    }
 
 .input-Item{
     margin-bottom: 1.2rem;

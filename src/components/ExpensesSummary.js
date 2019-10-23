@@ -10,7 +10,7 @@ function ExpensesSummary(props){
             <div className="innerdiv">
                 <h1 className="view">Viewing <span>{props.ExpenseCount}</span> expenses totalling Rs <span>{props.TotalExpense}</span>.</h1> 
             <div className="linkdiv">
-                <Link to="/create" className="button">Add Expense</Link>
+                <Link to="/create" className="button button-1">Add Expense</Link>
             </div>
             
             </div>           
